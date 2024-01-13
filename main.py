@@ -4,7 +4,9 @@ import re
 
 result = []
 with open("loremIpsum.txt", "r") as myFile:
-    result = re.findall(r'\b\w{7,}\b',myFile.read())
+    result = re.findall(r'\b\w{7,}\b',myFile.read())  # читаємо текст з файлу та регулярним виразом "виписуємо"
+                                                             # в список слова довжиною від 7 букв
 
-with open("minSevenLetters.txt", "w") as myNewFile:
+with open("minSevenLetters.txt", "w") as myNewFile:  # записуємо список в текстовий файл. За допомогою функції join
+                                                     # розділяємо слова пробілом
     myNewFile.write(" ".join(result))
